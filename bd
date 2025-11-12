@@ -1,0 +1,27 @@
+create database acervo_musical;
+use acervo_musical;
+
+create table usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    sexo ENUM('Feminino', 'Masculino', 'Outros') NOT NULL,
+    data_nascimento DATE NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE artistas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    genero VARCHAR(50),
+    descricao TEXT,
+    imagem VARCHAR(255)
+);
+INSERT INTO artistas (nome, genero, descricao, imagem)
+VALUES
+('Coldplay', 'Pop Rock', 'Banda britânica conhecida por músicas melódicas e emotivas.', ''),
+('Anitta', 'Pop/Funk', 'Cantora brasileira de sucesso internacional.', 'imagens/anitta.jpg'),
+('Arctic Monkeys', 'Indie Rock', 'Banda inglesa com estilo alternativo e letras marcantes.', ''),
+('Sabrina Cerpenter', 'Pop', 'Banda inglesa com estilo alternativo e letras marcantes.', 'Sabrina-Carpenter-libera-seu-novo-album-‘Mans-Best-Friend.jpg');
+
+ select*from artistas;
