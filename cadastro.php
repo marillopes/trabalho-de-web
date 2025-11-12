@@ -24,6 +24,7 @@
         <label for="senha">Senha</label>
         <input type="password" name="senha" required><br><br>
         <button type="submit" name="cadastrar">Cadastrar</button>
+        <br><br><a href="login.php">Já é cadastrado? Faça login!</a>
     </form>
 
     <?php
@@ -39,6 +40,7 @@
 
             if($conexao->query($sql) === TRUE){
                 echo "Usuário cadastrado com sucesso";
+                header("refresh=3; url=home.php");
                 } else {
                 echo "Erro: " . $conexao->error;
                 }
